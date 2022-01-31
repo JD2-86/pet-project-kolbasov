@@ -3,8 +3,8 @@ package entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="users")
-public class User{
+@Table(name = "users")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -24,8 +24,7 @@ public class User{
         this.email = email;
     }
 
-    public  User ()
-    {
+    public User() {
 
     }
 
@@ -42,7 +41,6 @@ public class User{
     }
 
 
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -54,9 +52,6 @@ public class User{
     public void setPassword(String password) {
         this.password = password;
     }
-
-
-
 
 
 }

@@ -17,14 +17,14 @@ public class RegistrationServlet extends HttpServlet {
 
     }
 
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        String username =req.getParameter("username");
-        String password =req.getParameter("password");
-        String firstname=req.getParameter("firstname");
-        String lastname =req.getParameter("lastname");
-        String email=req.getParameter("email");
-        User myuser =new User(username,password,firstname,lastname,email);
-        UserDaoIml m =new UserDaoIml();
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        String firstname = req.getParameter("firstname");
+        String lastname = req.getParameter("lastname");
+        String email = req.getParameter("email");
+        User myuser = new User(username, password, firstname, lastname, email);
+        UserDaoIml m = new UserDaoIml();
         m.save(myuser);
 
     }

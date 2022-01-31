@@ -5,11 +5,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class UserDaoIml implements UserDao{
+public class UserDaoIml implements UserDao {
 
     @Override
     public void save(User user) {
-      SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
         Session session = sessionFactory.openSession();
         session.getTransaction().begin();
         session.save(user);
