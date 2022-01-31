@@ -14,7 +14,5 @@ public class UserDaoIml implements UserDao{
         session.getTransaction().begin();
         session.save(user);
         session.close();
-
-
     }
 }
