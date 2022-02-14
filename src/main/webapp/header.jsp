@@ -29,11 +29,11 @@
     </div>
     <nav id="navHeader">
         <ul>
-            <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/cameras">КАМЕРЫ</a></li>
+            <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter-1.0-SNAPSHOT/cameras">КАМЕРЫ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="">ВИДЕОРЕГИСТРАТОРЫ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="">ЗАПРОС ЗАПИСЕЙ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="contacts.jsp">КОНТАКТЫ</a></li>
-            <a id="pay"  href="/VideoPerimeter_war/registration"><img src="https://img.icons8.com/ios-glyphs/60/ffffff/test-account.png"/>
+            <a id="pay"  href="/VideoPerimeter-1.0-SNAPSHOT/registration"><img src="https://img.icons8.com/ios-glyphs/60/ffffff/test-account.png"/>
             </a>
         </ul>
     </nav>
