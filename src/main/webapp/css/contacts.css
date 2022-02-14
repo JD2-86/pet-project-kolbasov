@@ -1,0 +1,33 @@
+
+.contact {
+    margin: 0 120px;
+    height: 308px;
+    color: black;
+    background: white;
+    min-height: 100vh;
+}
+.contact-header {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+
+    font-size: 25px;
+}
+.contacts  {
+
+    font-size: 18px;
+    padding: 40px;
+    padding-top: 0;
+}
+.contacts span {
+    font-weight: 700;
+    font-size: 20px;
+}
+.contacts ul {
+   padding-left: 0;
+   margin: 0;
+}
+.contacts ul li {
+    list-style-type: none;
+    padding-bottom: 10px;
+}

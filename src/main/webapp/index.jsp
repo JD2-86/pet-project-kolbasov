@@ -6,34 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <title>CameKol</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Oswald:wght@300&display=swap" rel="stylesheet">
 
 </head>
 <body>
-<header>
-    <div id="logo">
-        <a href="index.jsp">
-            <div id="kolDiv">
-                <div id="kol">
-                    VIDEO.
-                </div>
-            </div>
-            <div id="camDiv">
-                <div id="cam">
-                    PERIMETER
-                </div>
-            </div>
-        </a>
-    </div>
-    <nav id="navHeader">
-        <ul>
-            <a id="pay"  href="registration.html"><img src="https://img.icons8.com/ios-glyphs/60/ffffff/test-account.png"/>
-                </a>
-        </ul>
-    </nav>
-</header>
+<%@ include file="/header.jsp"%>
 <div id="banner">
     <div class="grayScreen">
     </div>

@@ -1,0 +1,479 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+}
+
+header, footer{
+    height: 150px;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+#banner{
+    /* position: relative; */
+    width: 100%;
+    height: 500px;
+    background-color: greenyellow;
+    background-image: url("https://3.downloader.disk.yandex.ru/preview/86c27e4187cc15a10aa37e3f07b07b9f657d628c97e429a8aeae9994c607a20a/inf/w0XqDiR9EMtJuJfl9yoYxo3sTUgaUoTfE6z0oWHZbq_FbAidhFNp-QYsuYOxhLXvXdSzLpnuaKxkPbVuCb8baw%3D%3D?uid=643950779&filename=camera.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=643950779&tknv=v2&size=1903x937");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grayScreen{
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 0; */
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+#banner h1{
+    position: absolute;
+    color: whitesmoke;
+    font-size: 60px;
+}
+
+#catalog{
+    width: 100%;
+    /* background-color: hotpink; */
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.catalogItem{
+    position: relative;
+    width: 330px;
+    height: 600px;
+    /* background-color: lightblue; */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 15px auto;
+    border: 3px solid white;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+.catalogItem:hover{
+    border: 3px solid gray;
+    cursor: pointer;
+}
+
+.catalogItemName{
+    height: 30px;
+    overflow-y: hidden;
+}
+
+.catalogItem img{
+    width: 250px;
+    height: 250px;
+}
+
+.catalogItemPriceOld{
+    text-decoration: line-through;
+    color: gray;
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+.catalogItemPrice{
+    height: 25px;
+    font-size: 18px;
+    overflow-y: hidden;
+}
+
+.catalogItemInfo{
+    text-align: center;
+    overflow-y: hidden;
+    height: 120px;
+}
+
+.buyButton{
+    width: 110px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-size: 13px;
+    border-radius: 5px;
+    border: 0;
+    transition: 1s;
+}
+
+.buyButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.buyButton:active{
+    transform: scale(0.5);
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.buy{
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*HEADER*/
+
+#logo{
+    height: 50%;
+    font-size: 45px;
+    font-family: Futura, sans-serif;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+#kolDiv{
+    width: 45%;
+    height: 62px;
+    float: left;
+    border-bottom: 3px solid white;
+}
+
+#camDiv{
+    margin-top: 4px;
+    width: 54%;
+    height: 58px;
+    float: right;
+    border-bottom: 3px solid white;
+}
+
+#kol{
+    float: right;
+    padding-top: 7px;
+    background-color: white;
+    color: black;
+    mix-blend-mode: screen;
+    border-top: 3px solid;
+}
+
+#cam{
+    float: left;
+    padding-top: 4px;
+    color: white;
+    border-top: 3px solid white;
+}
+
+nav{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+}
+
+nav li{
+    margin: 0 35px;
+    font-family: Futura, sans-serif;
+    text-transform: uppercase;
+}
+
+
+#pay, #signIn{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    bottom: 20px;
+    border-radius: 7px;
+}
+
+#pay{
+    right: 120px;
+    bottom: 23px;
+}
+
+#signIn{
+    right: 60px;
+}
+
+
+
+
+
+.default-header-menu-item:not(:hover):after {
+    -webkit-transform: scalex(0);
+    transform: scalex(0);
+}
+
+.default-header-menu-item:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: -3px;
+    background: #fff;
+    -webkit-transition: -webkit-transform .5s;
+    transition: -webkit-transform .5s;
+    transition: transform .5s;
+    transition: transform .5s,-webkit-transform .5s;
+}
+
+a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.default-header-menu-item{
+    position: relative;
+}
+
+a:visited{
+    color: whitesmoke;
+}
+
+/* //HEADER// */
+
+/* FOOTER */
+footer{
+    height: 300px;
+    position: relative;
+}
+
+#copyright{
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* FOOTER */
+
+@media screen and (max-width: 960px){
+    #pay, #signIn{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px){
+    nav li{
+        margin: 0 25px;
+    }
+}
+
+@media screen and (max-width: 750px){
+    header nav{
+        display: none;
+    }
+
+    header{
+        height: 72px;
+    }
+
+    footer nav{
+        height: 70%;
+    }
+
+    nav ul{
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+
+    nav ul li{
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    header{
+        height: 56px;
+    }
+
+    #logo{
+        font-size: 30px;
+    }
+
+    #kolDiv{
+        height: 45px;
+    }
+
+    #camDiv{
+        height: 42px;
+    }
+
+    #banner{
+        height: 300px;
+    }
+
+    .catalogItem{
+        height: 400px;
+    }
+
+    .catalogItemInfo{
+        display: none;
+    }
+
+    #catalog{
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #kolDiv{
+        width: 40%;
+    }
+
+    #camDiv{
+        width: 58%;
+    }
+
+}
+/*адаптация*/
+@media screen and (max-width: 1250px){
+    #pay, #signIn{
+        display: none;
+    }
+
+    nav li{
+        margin: 0 30px;
+        /* font-size: 14px; */
+    }
+}
+
+@media screen and (max-width: 1000px){
+    nav{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px){
+    nav li{
+        margin: 0 20px;
+        /* font-size: 13px; */
+    }
+}
+
+@media screen and (max-width: 900px){
+    nav li{
+        margin: 0 18px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 750px){
+    header nav{
+        display: none;
+    }
+
+    header{
+        height: 72px;
+    }
+
+    footer nav{
+        height: 70%;
+    }
+
+    nav ul{
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+
+    nav ul li{
+        margin-top: 10px;
+    }
+
+    #banner{
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    header{
+        height: 56px;
+    }
+
+    #logo{
+        font-size: 30px;
+    }
+
+    #kolDiv{
+        height: 45px;
+    }
+
+    #camDiv{
+        height: 42px;
+    }
+
+    #banner{
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #banner h1{
+        font-size: 30px;
+    }
+
+    #kolDiv{
+        width: 40%;
+    }
+
+    #camDiv{
+        width: 58%;
+    }
+
+    #words{
+        height: 70px;
+    }
+
+    #slogan{
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 300px){
+    header {
+        height: 45px;
+    }
+
+    #camDiv {
+        height: 30px;
+    }
+
+    #kolDiv {
+        height: 35px;
+    }
+
+    #logo{
+        font-size: 20px;
+    }
+
+    #slogan{
+        font-size: 15px;
+    }
+}
+

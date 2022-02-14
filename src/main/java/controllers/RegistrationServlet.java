@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 import dao.UserDaoIml;
 import entity.User;
@@ -12,8 +12,8 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/registration")
 public class RegistrationServlet extends HttpServlet {
-
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        getServletContext().getRequestDispatcher("/registration.jsp").forward(req,resp);
 
     }
 
@@ -26,7 +26,7 @@ public class RegistrationServlet extends HttpServlet {
         User myuser = new User(username, password, firstname, lastname, email);
         UserDaoIml m = new UserDaoIml();
         m.save(myuser);
-
+        getServletContext().getRequestDispatcher("/index.jsp").forward(req,resp);
     }
 
 }

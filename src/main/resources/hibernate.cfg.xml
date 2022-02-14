@@ -13,6 +13,8 @@
         <property name="format_sql">true</property>
 
         <mapping class="entity.User"/>
+        <mapping class ="entity.Cameras"/>
+
 
     </session-factory>
 </hibernate-configuration>
