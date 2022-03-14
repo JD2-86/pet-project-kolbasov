@@ -1,11 +1,11 @@
-package dao.inreface;
+package by.kolbasov.dao.inreface;
 
-import entity.Cameras;
-import org.hibernate.Session;
+import by.kolbasov.entity.Cameras;
 
 import java.util.List;
 
 public interface CamerasDao {
     void save (Cameras cameras);
     List<Cameras> findAll ();
+    Cameras findById(Long id);
 }

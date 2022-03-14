@@ -12,6 +12,7 @@
 
 </head>
 <body>
+
 <%@ include file="/header.jsp"%>
 <div id="banner">
     <div class="grayScreen">

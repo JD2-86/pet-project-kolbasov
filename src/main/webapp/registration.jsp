@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/styleReg.css">
 </head>
 <body>
-<form action="/VideoPerimeter-1.0-SNAPSHOT/registration" method="post">
+<form action="/VideoPerimeter_war/registration" method="post">
 
     <div align="center">
         <div class ="sing-in">

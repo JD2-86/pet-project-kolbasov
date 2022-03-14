@@ -1,4 +1,4 @@
-<%@ page import="entity.Cameras" %>
+<%@ page import="by.kolbasov.entity.Cameras" %>
 <%@ page import="java.util.List" %>
 <html xmlns="http://www.w3.org/1999/xhtml"
 xmlns:th="http://www.thymeleaf.org" >
@@ -9,14 +9,11 @@ xmlns:th="http://www.thymeleaf.org" >
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
 
+
 </head>
 
 <body>
 <%@ include file="/header.jsp"%>
-<%
-    List<Cameras> cameras = (List) request.getAttribute("cam");
-    request.setAttribute("cam",cameras);
-%>
 
 <div  id="catalog">
 
@@ -27,7 +24,7 @@ xmlns:th="http://www.thymeleaf.org" >
             <div class="buy">
                 <p class="catalogItemPrice">${cam.cost}</p>
 
-                <button class="buyButton bold"><a href="cameras/${cam.cam_id}">Details</a></button>
+                <button class="buyButton bold"><a href="cameras/${cam.cam_id-1}">Details</a></button>
             </div>
         </div>
         </c:forEach>
