@@ -24,7 +24,7 @@ xmlns:th="http://www.thymeleaf.org" >
             <div class="buy">
                 <p class="catalogItemPrice">${cam.cost}</p>
 
-                <button class="buyButton bold"><a href="cameras/${cam.cam_id-1}">Details</a></button>
+                <button class="buyButton bold"><a href="cameras/${cam.cam_id}">Details</a></button>
             </div>
         </div>
         </c:forEach>

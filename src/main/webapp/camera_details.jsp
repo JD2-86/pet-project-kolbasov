@@ -19,7 +19,6 @@
 <div id="itemImg">
     <img src="${cam.url}" alt="camera">
 </div>
-
 <div id="itemInfo">
     <h1 id="nameItem">${cam.cam_name}</h1>
     <p id="priceItem">${cam.cost}</p>
