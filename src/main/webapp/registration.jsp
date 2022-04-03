@@ -16,7 +16,7 @@
             <div class="form-container">
                 <div class="form-content">
                     <h2 class="form-title">Registration</h2>
-                    <input placeholder="Username" type="text" name="username" class="form-control" required/>
+                    <input placeholder="Login" type="text" name="login" class="form-control" required/>
                     <span class="text-danger"></span>
                     <input placeholder="Password" type="password" name="password" class="form-control" required/>
                     <input placeholder="Firstname" type="text" name="firstname" class="form-control" required/>

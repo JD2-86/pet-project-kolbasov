@@ -13,7 +13,12 @@ public class Cameras {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long cam_id;
     private float cost;
-    private String cam_name,url,matrix,sensitivity,viewing_angle,resolution;
+    private String cam_name;
+    private String url;
+    private String matrix;
+    private String sensitivity;
+    private String viewing_angle;
+    private String resolution;
 
     public Cameras(Long cam_id, float cost, String cam_name, String url, String matrix, String sensitivity, String viewing_angle, String resolution) {
         this.cam_id = cam_id;

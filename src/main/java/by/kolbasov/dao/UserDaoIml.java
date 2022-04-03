@@ -1,7 +1,7 @@
 package by.kolbasov.dao;
 
 import by.kolbasov.dao.inreface.UserDao;
-import by.kolbasov.entity.User;
+import by.kolbasov.entity.user.User;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

@@ -2,7 +2,7 @@ package by.kolbasov.controllers;
 
 
 import by.kolbasov.entity.Cameras;
-import by.kolbasov.service.CamService;
+import by.kolbasov.service.camService.CamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

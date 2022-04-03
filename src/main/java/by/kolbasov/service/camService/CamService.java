@@ -1,4 +1,4 @@
-package by.kolbasov.service;
+package by.kolbasov.service.camService;
 
 import by.kolbasov.entity.Cameras;
 

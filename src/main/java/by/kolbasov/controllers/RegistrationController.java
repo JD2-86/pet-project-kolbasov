@@ -1,9 +1,8 @@
 package by.kolbasov.controllers;
 
 
-import by.kolbasov.dao.UserDaoIml;
-import by.kolbasov.entity.User;
-import by.kolbasov.service.UserService;
+import by.kolbasov.entity.user.User;
+import by.kolbasov.service.userService.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,9 +22,9 @@ public class RegistrationController {
     }
 
     @PostMapping(path = "/registration")
-    public String AddUSer(@RequestParam String username, @RequestParam String password, @RequestParam String firstname, @RequestParam String lastname, @RequestParam String email) {
-        User newUser = new User(username, password, firstname, lastname, email);
+    public String AddUSer(@RequestParam String login, @RequestParam String password, @RequestParam String firstname, @RequestParam String lastname, @RequestParam String email) {
+        User newUser = new User(login, password, firstname, lastname, email);
         userService.save(newUser);
-        return "redirect:/";
+        return "redirect:/login";
     }
 }

@@ -1,8 +1,8 @@
-package by.kolbasov.service.impl;
+package by.kolbasov.service.camService.impl;
 
 import by.kolbasov.entity.Cameras;
-import by.kolbasov.repo.CamRepository;
-import by.kolbasov.service.CamService;
+import by.kolbasov.repository.CamRepository;
+import by.kolbasov.service.camService.CamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

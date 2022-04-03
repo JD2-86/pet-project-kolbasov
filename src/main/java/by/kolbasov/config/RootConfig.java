@@ -1,6 +1,5 @@
 package by.kolbasov.config;
 
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -9,8 +8,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
-import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -27,7 +24,7 @@ import java.util.Properties;
 })
 @PropertySource("classpath:database.properties")
 @EnableTransactionManagement
-@EnableJpaRepositories("by.kolbasov.repo")
+@EnableJpaRepositories("by.kolbasov.repository")
 public class RootConfig {
 
     @Value("${jdbc.driver}")
@@ -58,7 +55,7 @@ public class RootConfig {
         return dataSource;
     }
 
-//    @Bean
+    //    @Bean
 //    public LocalSessionFactoryBean sessionFactory() {
 //        LocalSessionFactoryBean localSessionFactoryBean = new LocalSessionFactoryBean();
 //        localSessionFactoryBean.setDataSource(dataSource());
@@ -82,12 +79,13 @@ public class RootConfig {
         properties.setProperty("hibernate.hbm2ddl.auto", "update");
         return properties;
     }
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em
                 = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan(new String[] { "by.kolbasov.entity" });
+        em.setPackagesToScan(new String[]{"by.kolbasov.entity"});
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
@@ -95,6 +93,7 @@ public class RootConfig {
 
         return em;
     }
+
     @Bean
     public PlatformTransactionManager transactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
@@ -104,7 +103,7 @@ public class RootConfig {
     }
 
     @Bean
-    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation() {
         return new PersistenceExceptionTranslationPostProcessor();
     }
 }

@@ -1,4 +1,4 @@
-package by.kolbasov.repo;
+package by.kolbasov.repository;
 
 import by.kolbasov.entity.Cameras;
 import org.springframework.data.jpa.repository.JpaRepository;
