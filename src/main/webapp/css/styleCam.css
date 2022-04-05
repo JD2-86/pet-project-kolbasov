@@ -78,7 +78,7 @@ header, footer{
 
 .catalogItemName{
     height: 30px;
-    overflow-y: hidden;
+    /*overflow-y: hidden;*/
 }
 
 .catalogItem img{

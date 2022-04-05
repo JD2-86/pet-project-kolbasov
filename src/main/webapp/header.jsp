@@ -14,7 +14,7 @@
 <body>
 <header>
     <div id="logo">
-        <a href="index.jsp">
+        <a href="/VideoPerimeter_war/">
             <div id="kolDiv">
                 <div id="kol">
                     VIDEO.
@@ -30,7 +30,8 @@
     <nav id="navHeader">
         <ul>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/cameras">КАМЕРЫ</a></li>
-            <li class="default-header-menu-item"><a class="p-2 text-white" href="">ВИДЕОРЕГИСТРАТОРЫ</a></li>
+            <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/registrators">ВИДЕОРЕГИСТРАТОРЫ</a></li>
+            <li class="default-header-menu-item"><a class="p-2 text-white" href="">ДОМОФОНЫ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="">ЗАПРОС ЗАПИСЕЙ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/contacts">КОНТАКТЫ</a></li>
             <a id="pay"  href="/VideoPerimeter_war/login"><img src="https://img.icons8.com/ios-glyphs/60/ffffff/test-account.png"/></a>

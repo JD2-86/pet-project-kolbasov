@@ -1,4 +1,4 @@
-<%@ page import="by.kolbasov.entity.Cameras" %>
+<%@ page import="by.kolbasov.entity.goods.Camera" %>
 <%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"
@@ -16,11 +16,12 @@
 
 <body>
 <button onclick="history.back();" class="back"> ←Назад </button>
+<form action="/VideoPerimeter_war/cameras/${cam.id}" method="post">
 <div id="itemImg">
     <img src="${cam.url}" alt="camera">
 </div>
 <div id="itemInfo">
-    <h1 id="nameItem">${cam.cam_name}</h1>
+    <h1 id="nameItem">${cam.name}</h1>
     <p id="priceItem">${cam.cost}</p>
     <button id="buyButton" class="bold">Приобрести</button>
     <p class="bold">
@@ -31,10 +32,9 @@
         <li>Разрешение:${cam.resolution}</li>
         <li>Чувствительность:${cam.sensitivity}</li>
         <li>Угол обзора:${cam.viewing_angle}</li>
-
     </ul>
-
 </div>
+</form>
 
 </body>
 </html>
