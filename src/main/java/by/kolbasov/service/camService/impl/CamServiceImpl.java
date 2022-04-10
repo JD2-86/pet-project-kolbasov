@@ -24,4 +24,9 @@ public class CamServiceImpl implements CamService {
         return camRepository.findAll();
     }
 
+    @Override
+    public void save(Camera camera) {
+        camRepository.save(camera);
+    }
+
 }

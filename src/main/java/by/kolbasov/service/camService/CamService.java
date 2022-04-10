@@ -7,4 +7,5 @@ import java.util.List;
 public interface CamService {
     Camera findById(Long id);
     List<Camera> findAll();
+    void save(Camera camera);
 }

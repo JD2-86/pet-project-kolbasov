@@ -5,7 +5,12 @@
     font-weight: bold;
     padding-top: 10px;
 }
-
+header{
+    height: 150px;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
 #kolDiv{
     width: 45%;
     height: 62px;

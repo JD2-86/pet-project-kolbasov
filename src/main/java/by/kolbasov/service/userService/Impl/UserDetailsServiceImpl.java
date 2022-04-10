@@ -27,7 +27,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
 
         return new org.springframework.security.core.userdetails.User(foundUser.getLogin(),
-               foundUser.getPassword(), getUserAuthorities(foundUser));
+                foundUser.getPassword(), getUserAuthorities(foundUser));
     }
 
     private Set<GrantedAuthority> getUserAuthorities(User user) {

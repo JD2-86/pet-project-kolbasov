@@ -15,4 +15,10 @@ public class CartServiceImpl implements CartService {
     public List<Cart> findByUserId(String login) {
         return cartRepository.findAllByUser_Login(login);
     }
+
+
+    @Override
+    public void delete(Long id) {
+        cartRepository.deleteById(id);
+    }
 }

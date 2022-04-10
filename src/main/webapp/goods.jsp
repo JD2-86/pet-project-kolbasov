@@ -8,8 +8,6 @@ xmlns:th="http://www.thymeleaf.org" >
     <link rel="stylesheet" href="css/styleCam.css">
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
-
-
 </head>
 
 <body>

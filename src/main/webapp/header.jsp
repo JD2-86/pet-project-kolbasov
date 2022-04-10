@@ -31,9 +31,10 @@
         <ul>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/cameras">КАМЕРЫ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/registrators">ВИДЕОРЕГИСТРАТОРЫ</a></li>
-            <li class="default-header-menu-item"><a class="p-2 text-white" href="">ДОМОФОНЫ</a></li>
+            <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/intercoms">ДОМОФОНЫ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="">ЗАПРОС ЗАПИСЕЙ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/contacts">КОНТАКТЫ</a></li>
+            <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/addGoods">ДОБАВИТЬ ТОВАР</a></li>
             <a id="pay"  href="/VideoPerimeter_war/login"><img src="https://img.icons8.com/ios-glyphs/60/ffffff/test-account.png"/></a>
             <a id="pay1"  href="/VideoPerimeter_war/logout"><img class="logout" src="https://4.downloader.disk.yandex.ru/preview/6b5a3cf30a1854aaeaea0af4b6efe80a2c0e5cc592eb81a718c92bb6b41a2885/inf/X2LbHNuYtK08EULNJnoNikvHqsNKB-SGwdl4ZHnvRy6pCZ_plqZeFyH-1MkYlvHgBBF23T2_EeXNql6vssdzjw%3D%3D?uid=643950779&filename=icons8-%D0%B2%D1%8B%D1%85%D0%BE%D0%B4-60.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=643950779&tknv=v2&size=1903x880"/></a>
         </ul>
