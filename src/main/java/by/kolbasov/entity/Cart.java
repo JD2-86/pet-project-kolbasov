@@ -1,13 +1,12 @@
 package by.kolbasov.entity;
 
-import by.kolbasov.entity.goods.Camera;
-import by.kolbasov.entity.goods.Intercom;
-import by.kolbasov.entity.goods.Registrator;
-import by.kolbasov.entity.user.User;
 import lombok.Getter;
 import lombok.Setter;
 
+
 import javax.persistence.*;
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,15 +21,24 @@ public class Cart {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name="cameras_id")
-    private Camera camera;
+    @ManyToMany
+    @JoinTable(
+            name = "camera_link",
+            joinColumns = @JoinColumn(name = "fk_cart"),
+            inverseJoinColumns = @JoinColumn(name = "fk_camera"))
+    private List<Camera> camera = new LinkedList<Camera>();
 
-    @ManyToOne
-    @JoinColumn(name="registrator_id")
-    private Registrator registrator;
+    @ManyToMany
+    @JoinTable(
+            name = "registrator_link",
+            joinColumns = @JoinColumn(name = "fk_cart"),
+            inverseJoinColumns = @JoinColumn(name = "fk_camera"))
+    private List<Registrator> registrator = new LinkedList<Registrator>();
 
-    @ManyToOne
-    @JoinColumn(name="intercom_id")
-    private Intercom intercom;
+    @ManyToMany
+    @JoinTable(
+            name = "intercom_link",
+            joinColumns = @JoinColumn(name = "fk_cart"),
+            inverseJoinColumns = @JoinColumn(name = "fk_intercom"))
+    private List<Intercom> intercom = new LinkedList<Intercom>();
 }

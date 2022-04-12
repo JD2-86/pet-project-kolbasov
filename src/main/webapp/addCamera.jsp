@@ -19,7 +19,7 @@
 <%@ include file="/headerGoods.jsp"%>
 
 <div class="container mt-5">
-    <form class="form" action="/VideoPerimeter_war/addGoods" method="post">
+    <form class="form" action="/VideoPerimeter_war/addCamera" method="post">
         <input type="text" name="name" placeholder="Введите название камеры" class="form-control"><br>
         <input type="text" name="url" placeholder="Введите url фото" class="form-control"><br>
         <input type="number" name="cost" placeholder="Введите Цену" class="form-control"><br>

@@ -1,8 +1,8 @@
 package by.kolbasov.controllers;
 
 
-import by.kolbasov.entity.user.User;
-import by.kolbasov.service.userService.UserService;
+import by.kolbasov.entity.User;
+import by.kolbasov.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

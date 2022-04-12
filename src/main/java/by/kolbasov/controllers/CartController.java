@@ -2,7 +2,7 @@ package by.kolbasov.controllers;
 
 
 import by.kolbasov.entity.Cart;
-import by.kolbasov.service.cartService.CartService;
+import by.kolbasov.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.List;
-
 @Controller
 public class CartController {
     @Autowired
@@ -20,7 +18,7 @@ public class CartController {
 
     @GetMapping("/cart")
     public String cart(Model model) {
-        List<Cart> cart = cartService.findByUserId(SecurityContextHolder.getContext()
+        Cart cart = cartService.findCartByUserId(SecurityContextHolder.getContext()
                 .getAuthentication().getName());
         model.addAttribute("cart", cart);
         return "cart";
@@ -28,7 +26,8 @@ public class CartController {
 
     @PostMapping("/cart/{id}/remove")
     public String remove(@PathVariable(value = "id") long id, Model model) {
-        cartService.delete(id);
+        cartService.delete(id,SecurityContextHolder.getContext()
+                .getAuthentication().getName());
         return "redirect:/cart";
     }
 

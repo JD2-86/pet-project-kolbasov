@@ -1,6 +1,6 @@
 package by.kolbasov.repository.userRepo;
 
-import by.kolbasov.entity.user.Role;
+import by.kolbasov.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepository extends JpaRepository<Role, Long> {
