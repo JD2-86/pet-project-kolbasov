@@ -1,4 +1,4 @@
-package by.kolbasov.repository.userRepo;
+package by.kolbasov.repository;
 
 import by.kolbasov.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;

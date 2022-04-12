@@ -1,11 +1,10 @@
 package by.kolbasov.dto;
 
-import by.kolbasov.entity.Camera;
-import by.kolbasov.entity.Intercom;
-import by.kolbasov.entity.Registrator;
-import by.kolbasov.entity.User;
+import by.kolbasov.entity.Cart;
+import by.kolbasov.mapper.UserMapper;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -13,10 +12,20 @@ import java.util.List;
 @Getter
 @Setter
 public class CartDto {
-    Long id;
-    private User user;
-    private List<Camera> camera = new LinkedList<Camera>();
-    private List<Registrator> registrator = new LinkedList<Registrator>();
-    private List<Intercom> intercom = new LinkedList<Intercom>();
 
+    Long id;
+    private UserDto user;
+    private List<CameraDto> camera = new LinkedList<CameraDto>();
+    private List<RegistratorDto> registrator = new LinkedList<RegistratorDto>();
+    private List<IntercomDto> intercom = new LinkedList<IntercomDto>();
+
+    public CartDto(Long id, UserDto user, List<CameraDto> camera, List<RegistratorDto> registrator, List<IntercomDto> intercom) {
+        this.id = id;
+        this.user = user;
+        this.camera = camera;
+        this.registrator = registrator;
+        this.intercom = intercom;
+    }
+
+    public CartDto(){}
 }

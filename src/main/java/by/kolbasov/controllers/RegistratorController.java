@@ -2,9 +2,11 @@ package by.kolbasov.controllers;
 
 import by.kolbasov.dto.RegistratorDto;
 import by.kolbasov.entity.Registrator;
+import by.kolbasov.entity.User;
 import by.kolbasov.repository.RegistratorRepository;
 import by.kolbasov.service.CartService;
 import by.kolbasov.service.RegistratorService;
+import by.kolbasov.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -21,20 +23,17 @@ public class RegistratorController {
     private CartService cartService;
     @Autowired
     private RegistratorRepository registratorRepository;
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/registrators")
-//    String Registrator(Model model,
-//                       @RequestParam(value = "size", required = false,defaultValue = "0") Integer size,
-//                       @RequestParam(value = "page", required = false,defaultValue = "9") Integer page) {
-//        Page<Registrator> registrators = registratorService.findAll(PageRequest.of(page,size));
-//        model.addAttribute("url", "registrators");
-//        model.addAttribute("goods", registrators);
-//        model.addAttribute("numbers", IntStream.range(0,registrators.getTotalPages()).toArray());
-//        return "goods";
+
     String Registrator(Model model) {
         List <Registrator> registrators = registratorRepository.findAll();
         model.addAttribute("url", "registrators");
         model.addAttribute("goods", registrators);
+        model.addAttribute("user",userService.findByLogin((SecurityContextHolder.getContext()
+                .getAuthentication().getName())));
         return "goods";
     }
 

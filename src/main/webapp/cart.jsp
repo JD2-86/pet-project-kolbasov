@@ -22,7 +22,7 @@
     <c:if test="${cart.camera !=null}">
         <c:forEach var="camera" items="${cart.camera}">
 
-            <form action="/VideoPerimeter_war/cart/${camera.id}/remove" method="post">
+            <form action="/VideoPerimeter_war/cart/${camera.id}/removeCamera" method="post">
                 <div class="item">
 
                     <div class="buttons">
@@ -53,7 +53,7 @@
     </c:if>
     <c:if test="${cart.registrator!=null}">
         <c:forEach var="registrator" items="${cart.registrator}">
-            <form action="/VideoPerimeter_war/cart/${registrator.id}/remove" method="post">
+            <form action="/VideoPerimeter_war/cart/${registrator.id}/removeRegistrator" method="post">
                 <div class="item">
 
                     <div class="buttons">
@@ -85,7 +85,7 @@
 
     <c:if test="${cart.intercom!=null}">
     <c:forEach var="intercom" items="${cart.intercom}">
-        <form action="/VideoPerimeter_war/cart/${intercom.id}/remove" method="post">
+        <form action="/VideoPerimeter_war/cart/${intercom.id}/removeIntercom" method="post">
             <div class="item">
 
                 <div class="buttons">
@@ -114,7 +114,9 @@
         </form>
     </c:forEach>
     </c:if>
-
+    <form action="/VideoPerimeter_war/cart/order/${cart.id}" method="post">
+    <button id="buyButton" class="bold">Заказать</button>
+    </form>
 </div>
 <script type="text/javascript">
     $('.minus-btn').on('click', function (e) {

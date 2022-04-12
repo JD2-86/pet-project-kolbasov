@@ -1,18 +1,14 @@
 package by.kolbasov.service.impl;
 
-import by.kolbasov.entity.Cart;
+import by.kolbasov.Status;
+import by.kolbasov.dto.CartDto;
 import by.kolbasov.entity.Camera;
+import by.kolbasov.entity.Cart;
 import by.kolbasov.entity.Intercom;
 import by.kolbasov.entity.Registrator;
-import by.kolbasov.repository.CamRepository;
-import by.kolbasov.repository.CartRepository;
-import by.kolbasov.repository.IntercomRepository;
-import by.kolbasov.repository.RegistratorRepository;
-import by.kolbasov.service.CamService;
-import by.kolbasov.service.CartService;
-import by.kolbasov.service.IntercomService;
-import by.kolbasov.service.RegistratorService;
-import by.kolbasov.service.UserService;
+import by.kolbasov.mapper.CartMapper;
+import by.kolbasov.repository.*;
+import by.kolbasov.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,6 +35,10 @@ public class CartServiceImpl implements CartService {
     private RegistratorRepository registratorRepository;
     @Autowired
     private IntercomRepository intercomRepository;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private CartMapper cartMapper;
 
     @Override
     public List<Cart> findByUserId(String login) {
@@ -46,11 +46,29 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public void delete(Long id, String login) {
+    public void deleteCamera(Long id, String login) {
         Cart cart = cartRepository.findByUser_Login(login);
         List<Camera> cameras = cart.getCamera();
-        cameras.remove(camService.findById(id));
+        cameras.remove(camRepository.findById(id).orElseThrow());
         cart.setCamera(cameras);
+        cartRepository.save(cart);
+    }
+
+    @Override
+    public void deleteIntercom(Long id, String login) {
+        Cart cart = cartRepository.findByUser_Login(login);
+        List<Intercom> intercoms = cart.getIntercom();
+        intercoms.remove(intercomRepository.findById(id).orElseThrow());
+        cart.setIntercom(intercoms);
+        cartRepository.save(cart);
+    }
+
+    @Override
+    public void deleteRegistrator(Long id, String login) {
+        Cart cart = cartRepository.findByUser_Login(login);
+        List<Registrator> registrators = cart.getRegistrator();
+        registrators.remove(registratorRepository.findById(id).orElseThrow());
+        cart.setRegistrator(registrators);
         cartRepository.save(cart);
     }
 
@@ -62,7 +80,7 @@ public class CartServiceImpl implements CartService {
             List<Camera> cameras = new LinkedList<>();
             cameras.add(camRepository.findById(id).orElseThrow());
             cart.setCamera(cameras);
-            cart.setUser(userService.findByLogin(login));
+            cart.setUser(userRepository.findByLogin(login));
         } else {
             cart.getCamera().add(camRepository.findById(id).orElseThrow());
         }
@@ -77,7 +95,7 @@ public class CartServiceImpl implements CartService {
             List<Registrator> registrators = new LinkedList<>();
             registrators.add(registratorRepository.findById(id).orElseThrow());
             cart.setRegistrator(registrators);
-            cart.setUser(userService.findByLogin(login));
+            cart.setUser(userRepository.findByLogin(login));
         } else {
             cart.getRegistrator().add(registratorRepository.findById(id).orElseThrow());
         }
@@ -92,7 +110,7 @@ public class CartServiceImpl implements CartService {
             List<Intercom> intercoms = new LinkedList<>();
             intercoms.add(intercomRepository.findById(id).orElseThrow());
             cart.setIntercom(intercoms);
-            cart.setUser(userService.findByLogin(login));
+            cart.setUser(userRepository.findByLogin(login));
         } else {
             cart.getIntercom().add(intercomRepository.findById(id).orElseThrow());
         }
@@ -100,8 +118,22 @@ public class CartServiceImpl implements CartService {
     }
 
     @Override
-    public Cart findCartByUserId(String login) {
-        return cartRepository.findByUser_Login(login);
+    public CartDto findCartByUserId(String login) {
+
+        return cartMapper.cartToCartDto(cartRepository.findByUser_Login(login));
 
     }
+
+    @Override
+    public void setOrder(Long id) {
+       Cart cart = cartRepository.findById(id).orElseThrow();
+       cart.setStatus(Status.ORDER);
+       cartRepository.save(cart);
+    }
+
+    @Override
+    public List<CartDto> findByStatus(Status status) {
+        return cartMapper.cartListToCartListDto(cartRepository.findAllByStatus(status));
+    }
+
 }

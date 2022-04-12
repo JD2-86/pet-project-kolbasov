@@ -16,14 +16,13 @@ import java.util.List;
 public class CamServiceImpl implements CamService {
 
     @Autowired
-    private  CameraMapper cameraMapper;
+    private CameraMapper cameraMapper;
     @Autowired
     private CamRepository camRepository;
 
 
-
     @Override
-    public CameraDto findById(Long id)  {
+    public CameraDto findById(Long id) {
         return cameraMapper.cameraToCameraDto(camRepository.findById(id).orElseThrow());
     }
 
@@ -34,7 +33,7 @@ public class CamServiceImpl implements CamService {
 
     @Override
     public void save(Camera camera) {
-        Camera newCamera =camera;
+        Camera newCamera = camera;
         camRepository.save(newCamera);
     }
 

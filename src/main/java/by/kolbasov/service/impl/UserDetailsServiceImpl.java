@@ -2,7 +2,7 @@ package by.kolbasov.service.impl;
 
 import by.kolbasov.entity.Role;
 import by.kolbasov.entity.User;
-import by.kolbasov.repository.userRepo.UserRepository;
+import by.kolbasov.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

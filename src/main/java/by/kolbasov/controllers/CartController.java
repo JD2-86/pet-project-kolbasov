@@ -1,7 +1,8 @@
 package by.kolbasov.controllers;
 
 
-import by.kolbasov.entity.Cart;
+import by.kolbasov.Status;
+import by.kolbasov.dto.CartDto;
 import by.kolbasov.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -18,17 +19,39 @@ public class CartController {
 
     @GetMapping("/cart")
     public String cart(Model model) {
-        Cart cart = cartService.findCartByUserId(SecurityContextHolder.getContext()
+        CartDto cart = cartService.findCartByUserId(SecurityContextHolder.getContext()
                 .getAuthentication().getName());
         model.addAttribute("cart", cart);
         return "cart";
     }
 
-    @PostMapping("/cart/{id}/remove")
-    public String remove(@PathVariable(value = "id") long id, Model model) {
-        cartService.delete(id,SecurityContextHolder.getContext()
+    @PostMapping("/cart/{id}/removeCamera")
+    public String removeCamera(@PathVariable(value = "id") long id, Model model) {
+        cartService.deleteCamera(id,SecurityContextHolder.getContext()
                 .getAuthentication().getName());
         return "redirect:/cart";
     }
+    @PostMapping("/cart/{id}/removeRegistrator")
+    public String removeRegistrator(@PathVariable(value = "id") long id) {
+        cartService.deleteRegistrator(id,SecurityContextHolder.getContext()
+                .getAuthentication().getName());
+        return "redirect:/cart";
+    }
+    @PostMapping("/cart/{id}/removeIntercom")
+    public String removeIntercome(@PathVariable(value = "id") long id) {
+        cartService.deleteIntercom(id,SecurityContextHolder.getContext()
+                .getAuthentication().getName());
+        return "redirect:/cart";
+    }
+    @PostMapping("/cart/order/{id}")
+    public String sendGoodsOrder(@PathVariable(value = "id") long id){
+        cartService.setOrder(id);
+        return "redirect:/";
+    }
 
+    @GetMapping("/goodsOrders")
+    public String goodOrders(Model model) {
+        model.addAttribute("cart",cartService.findByStatus(Status.ORDER));
+        return "goodsOrder";
+    }
 }

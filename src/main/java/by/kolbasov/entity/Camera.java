@@ -26,18 +26,18 @@ public class Camera extends BaseGoods {
         super();
     }
 
-    @Override
-    public boolean equals(Object obj){
-        if (obj == null)
-            return false;
-        if (!(obj instanceof Camera))
-            return false;
-        Camera other = (Camera) obj;
-        return id != null && id.equals(other.id);
-    }
-    @Override
-    public int hashCode() {
-        return id.hashCode() ;
-    }
+//    @Override
+//    public boolean equals(Object obj){
+//        if (obj == null)
+//            return false;
+//        if (!(obj instanceof Camera))
+//            return false;
+//        Camera other = (Camera) obj;
+//        return id != null && id.equals(other.id);
+//    }
+//    @Override
+//    public int hashCode() {
+//        return id.hashCode() ;
+//    }
 
 }

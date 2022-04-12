@@ -4,6 +4,7 @@ import by.kolbasov.dto.IntercomDto;
 import by.kolbasov.entity.Intercom;
 import by.kolbasov.service.CartService;
 import by.kolbasov.service.IntercomService;
+import by.kolbasov.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -21,11 +22,15 @@ public class IntercomController {
     private IntercomService intercomService;
     @Autowired
     private CartService cartService;
+    @Autowired
+    private UserService userService;
     @GetMapping("/intercoms")
     String Registrator(Model model) {
         List<IntercomDto> intercoms = intercomService.findAll();
         model.addAttribute("url", "intercoms");
         model.addAttribute("goods", intercoms);
+        model.addAttribute("user",userService.findByLogin((SecurityContextHolder.getContext()
+                .getAuthentication().getName())));
         return "goods";
     }
 

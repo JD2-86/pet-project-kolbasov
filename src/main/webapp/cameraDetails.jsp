@@ -23,7 +23,7 @@
     <div id="itemInfo">
         <h1 id="nameItem">${cam.name}</h1>
         <p id="priceItem">${cam.cost}</p>
-        <button id="buyButton" class="bold">Приобрести</button>
+        <button id="buyButton" class="bold">В корзину</button>
         <p class="bold">
             Характеристика:
         </p>

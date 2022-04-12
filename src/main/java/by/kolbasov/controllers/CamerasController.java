@@ -5,6 +5,7 @@ import by.kolbasov.dto.CameraDto;
 import by.kolbasov.entity.Camera;
 import by.kolbasov.service.CamService;
 import by.kolbasov.service.CartService;
+import by.kolbasov.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,8 @@ public class CamerasController {
     private CamService camService;
     @Autowired
     private CartService cartService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping(path = "/cameras")
     public String cameras(Model model) {
@@ -33,6 +36,8 @@ public class CamerasController {
         List<CameraDto> cameras = camService.findAll();
         model.addAttribute("url", "cameras");
         model.addAttribute("goods", cameras);
+        model.addAttribute("user",userService.findByLogin((SecurityContextHolder.getContext()
+                .getAuthentication().getName())));
         return "goods";
     }
 

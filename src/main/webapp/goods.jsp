@@ -13,15 +13,18 @@ xmlns:th="http://www.thymeleaf.org" >
 <body>
 <%@ include file="/header.jsp"%>
 
+
 <div  id="catalog">
 
         <c:forEach var="goods" items="${goods}" >
         <div  class="catalogItem">
+            <c:if test="${user.role.name=='ADMIN'}">
             <form action="/VideoPerimeter_war/${url}/${goods.id}/remove"method="post">
             <div class="buttons">
                 <button class="delete-btn" type="submit" ></button>
                 <a class="edit-btn" href="/VideoPerimeter_war/${url}/${goods.id}/edit"><img src="https://img.icons8.com/material-sharp/24/000000/edit--v1.png"/></a>
             </div>
+                </c:if>
             <img src="${goods.url}" alt="camera"/>
             <p class="catalogItemName bold">${goods.name}</p>
             <div class="buy">

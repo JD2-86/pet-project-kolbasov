@@ -18,11 +18,12 @@ public class RegistrationController {
 
     @GetMapping(path = "/registration")
     public String registration(Model model) {
+
         return "registration";
     }
 
     @PostMapping(path = "/registration")
-    public String AddUSer(@RequestParam String login, @RequestParam String password, @RequestParam String firstname, @RequestParam String lastname, @RequestParam String email) {
+    public String addUser(@RequestParam String login, @RequestParam String password, @RequestParam String firstname, @RequestParam String lastname, @RequestParam String email) {
         User newUser = new User(login, password, firstname, lastname, email);
         userService.save(newUser);
         return "redirect:/login";

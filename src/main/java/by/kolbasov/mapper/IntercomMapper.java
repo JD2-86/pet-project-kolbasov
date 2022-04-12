@@ -9,7 +9,6 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface IntercomMapper {
-    IntercomMapper INSTANCE = Mappers.getMapper(IntercomMapper.class);
     IntercomDto IntercomToIntercomDto(Intercom intercom);
     List<IntercomDto> intercomListToIntercomDtoList(List<Intercom> intercoms);
 }

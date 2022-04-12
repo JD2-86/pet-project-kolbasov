@@ -1,3 +1,7 @@
+<%@ page import="by.kolbasov.entity.User" %>
+<%@ page import="org.springframework.beans.factory.annotation.Autowired" %>
+<%@ page import="by.kolbasov.service.UserService" %>
+<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"
@@ -9,9 +13,10 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Oswald:wght@300&display=swap" rel="stylesheet">
-
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 </head>
 <body>
+
 <header>
     <div id="logo">
         <a href="/VideoPerimeter_war/">
@@ -32,7 +37,7 @@
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/cameras">КАМЕРЫ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/registrators">ВИДЕОРЕГИСТРАТОРЫ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/intercoms">ДОМОФОНЫ</a></li>
-            <li class="default-header-menu-item"><a class="p-2 text-white" href="">ЗАПРОС ЗАПИСЕЙ</a></li>
+            <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/sendOrder">ЗАПРОС ЗАПИСЕЙ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/contacts">КОНТАКТЫ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/addCamera">ДОБАВИТЬ ТОВАР</a></li>
             <a id="pay"  href="/VideoPerimeter_war/login"><img src="https://img.icons8.com/ios-glyphs/60/ffffff/test-account.png"/></a>

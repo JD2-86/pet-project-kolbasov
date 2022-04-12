@@ -1,5 +1,6 @@
 package by.kolbasov.dto;
 
+import by.kolbasov.entity.Role;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,4 +13,5 @@ public class UserDto {
     private String firstname;
     private String lastname;
     private String email;
+    private Role role;
 }
