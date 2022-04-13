@@ -39,12 +39,13 @@
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/intercoms">ДОМОФОНЫ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/sendOrder">ЗАПРОС ЗАПИСЕЙ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/contacts">КОНТАКТЫ</a></li>
-            <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/addCamera">ДОБАВИТЬ ТОВАР</a></li>
+            <a id="pay2" href="/VideoPerimeter_war/cart"><img src="https://3.downloader.disk.yandex.ru/preview/06d06705a6a3ab68f2c738cb92d8204f80f9b6dafdde83fb40ca675e027e491c/inf/BO6p6cTeDIlrNAhRZJGd17IYHir_FXODmfAae1XvV-gpqA13letCe4BvK1uzTPxS6x8-ULf1wUZ4COsmP1udYA%3D%3D?uid=643950779&filename=icons8-%D0%B8%D0%B7%D0%B1%D1%80%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D1%8B-60.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=643950779&tknv=v2&size=1903x880"/></a>
             <a id="pay"  href="/VideoPerimeter_war/login"><img src="https://img.icons8.com/ios-glyphs/60/ffffff/test-account.png"/></a>
             <a id="pay1"  href="/VideoPerimeter_war/logout"><img class="logout" src="https://4.downloader.disk.yandex.ru/preview/6b5a3cf30a1854aaeaea0af4b6efe80a2c0e5cc592eb81a718c92bb6b41a2885/inf/X2LbHNuYtK08EULNJnoNikvHqsNKB-SGwdl4ZHnvRy6pCZ_plqZeFyH-1MkYlvHgBBF23T2_EeXNql6vssdzjw%3D%3D?uid=643950779&filename=icons8-%D0%B2%D1%8B%D1%85%D0%BE%D0%B4-60.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=643950779&tknv=v2&size=1903x880"/></a>
-        </ul>
 
+        </ul>
     </nav>
+
 </header>
 
 

@@ -1,6 +1,6 @@
 package by.kolbasov.service.impl;
 
-import by.kolbasov.Status;
+import by.kolbasov.model.Status;
 import by.kolbasov.dto.CartDto;
 import by.kolbasov.entity.Camera;
 import by.kolbasov.entity.Cart;
@@ -23,14 +23,6 @@ public class CartServiceImpl implements CartService {
     private CartRepository cartRepository;
     @Autowired
     private CamRepository camRepository;
-    @Autowired
-    private CamService camService;
-    @Autowired
-    private UserService userService;
-    @Autowired
-    private RegistratorService registratorService;
-    @Autowired
-    private IntercomService intercomService;
     @Autowired
     private RegistratorRepository registratorRepository;
     @Autowired
@@ -134,6 +126,17 @@ public class CartServiceImpl implements CartService {
     @Override
     public List<CartDto> findByStatus(Status status) {
         return cartMapper.cartListToCartListDto(cartRepository.findAllByStatus(status));
+    }
+
+    @Override
+    public void deleteGoodsOrder(Long id) {
+
+        cartRepository.delete(cartRepository.findById(id).orElseThrow());
+    }
+
+    @Override
+    public CartDto findById(Long id) {
+        return cartMapper.cartToCartDto(cartRepository.findById(id).orElseThrow());
     }
 
 }

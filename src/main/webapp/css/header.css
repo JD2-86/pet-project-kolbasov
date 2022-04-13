@@ -81,7 +81,11 @@ nav li{
     right: 140px;
     bottom: 40px;
 }
-
+#pay2 {
+    position: absolute;
+    right: 185px;
+    bottom: 5px;
+}
 #signIn{
     right: 60px;
 }

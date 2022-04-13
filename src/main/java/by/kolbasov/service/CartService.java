@@ -1,6 +1,6 @@
 package by.kolbasov.service;
 
-import by.kolbasov.Status;
+import by.kolbasov.model.Status;
 import by.kolbasov.dto.CartDto;
 import by.kolbasov.entity.Cart;
 
@@ -26,5 +26,9 @@ public interface CartService {
     void setOrder(Long id);
 
     List<CartDto> findByStatus(Status status);
+
+    void deleteGoodsOrder(Long id);
+
+    CartDto findById(Long Id);
 
 }

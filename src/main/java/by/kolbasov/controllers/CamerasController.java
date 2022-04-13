@@ -60,6 +60,17 @@ public class CamerasController {
         camService.delete(id);
         return "redirect:/cameras";
     }
+    @GetMapping("/addCamera")
+    public String AddCamera(Model model) {
+        model.addAttribute("camera", new Camera());
+        return "addCamera";
+    }
+
+    @PostMapping("/addCamera")
+    public String SaveGoods(@ModelAttribute("camera") Camera camera) {
+        camService.save(camera);
+        return "redirect:/cameras";
+    }
 
     @GetMapping("/cameras/{id}/edit")
     public String editCamera(@PathVariable(value = "id") long id, Model model) {

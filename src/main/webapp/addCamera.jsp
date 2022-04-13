@@ -4,7 +4,7 @@
 %>
 <html>
 <head>
-    <title>AddGoods</title>
+    <title>AddCamera</title>
     <link rel="stylesheet" href="css/addGoodsStyle.css">
 </head>
 <style>
@@ -16,9 +16,11 @@
 
 <body>
 <%@ include file="/header.jsp"%>
+<%@ include file="/adminHeader.jsp"%>
 <%@ include file="/headerGoods.jsp"%>
 
 <div class="container mt-5">
+    <h1 class="title"> Добавление Камеры</h1>
     <form class="form" action="/VideoPerimeter_war/addCamera" method="post">
         <input type="text" name="name" placeholder="Введите название камеры" class="form-control"><br>
         <input type="text" name="url" placeholder="Введите url фото" class="form-control"><br>

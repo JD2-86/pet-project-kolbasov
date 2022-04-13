@@ -1,6 +1,6 @@
 package by.kolbasov.entity;
 
-import by.kolbasov.Status;
+import by.kolbasov.model.Status;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,26 +18,26 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "user_id")
     private User user;
     private Status status;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(
             name = "camera_link",
             joinColumns = @JoinColumn(name = "fk_cart"),
             inverseJoinColumns = @JoinColumn(name = "fk_camera"))
     private List<Camera> camera = new LinkedList<Camera>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(
             name = "registrator_link",
             joinColumns = @JoinColumn(name = "fk_cart"),
             inverseJoinColumns = @JoinColumn(name = "fk_camera"))
     private List<Registrator> registrator = new LinkedList<Registrator>();
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(
             name = "intercom_link",
             joinColumns = @JoinColumn(name = "fk_cart"),

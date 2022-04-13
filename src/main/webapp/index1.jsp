@@ -14,6 +14,9 @@
 <body>
 
 <%@ include file="/header.jsp"%>
+    <c:if test="${user.role.name=='ADMIN'}">
+    <%@ include file="adminHeader.jsp"%></div><br>
+    </c:if>
 <div id="banner">
     <div class="grayScreen">
     </div>

@@ -12,8 +12,9 @@ xmlns:th="http://www.thymeleaf.org" >
 
 <body>
 <%@ include file="/header.jsp"%>
-
-
+<c:if test="${user.role.name=='ADMIN'}">
+<%@ include file="adminHeader.jsp"%></div><br>
+</c:if>
 <div  id="catalog">
 
         <c:forEach var="goods" items="${goods}" >

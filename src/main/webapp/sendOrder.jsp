@@ -20,8 +20,8 @@
     <form class="form" action="/VideoPerimeter_war/sendOrder" method="post">
         <input type="text" name="address" placeholder="Введите ваш адрес" class="form-control"><br>
         <input type="text" name="num" placeholder="Введите ваш номер телефона" class="form-control"><br>
-        <input type="text" name="dut" placeholder="Введите дату и время за нужный период" class="form-control"><br>
-        <textarea  name="description" placeholder="Дополнительная информация" class="form-control"></textarea><br>
+        <input type="text" name="period" placeholder="Введите дату и время за нужный период" class="form-control"><br>
+        <textarea  name="description" placeholder="Дополнительная информация(Ф.И.О. если не зарегистрированы)" class="form-control"></textarea><br>
 
         <button type="sumbit" class="btn btn-success">Заказать запись</button>
     </form>

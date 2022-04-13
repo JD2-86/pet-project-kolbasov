@@ -29,7 +29,6 @@ public class UserServiceImpl implements UserService {
     public void save(User user) {
         if(userRepository.existsByLogin(user.getLogin())){
             throw new CustomException("Пользователь с таким логином уже сущствует");
-
         }
         Role userRole = roleRepository.findByName("USER");
         user.setRole(userRole);

@@ -22,6 +22,7 @@
                     <input placeholder="Firstname" type="text" name="firstname" class="form-control" required/>
                     <input placeholder="Lastname" type="text" name="lastname" class="form-control" required/>
                     <input placeholder="Email" type="text" name="email" class="form-control" required/>
+                    <input placeholder="Phone Number" type="text" name=number class="form-control" required/>
                 </div>
                 <div><button id="signUpButton" type="submit" class="form-btn btn btn-primary btn-block" disabled>Registration</button></div>
                 <div>
@@ -41,7 +42,7 @@
             if(input.value)
                 counter++
         }
-        if(counter === 5){
+        if(counter === 6){
             return true
         } else{
             return false

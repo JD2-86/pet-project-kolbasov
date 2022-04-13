@@ -15,7 +15,7 @@
         <div class ="sing-in">
             <div class="form-container">
                 <div class="form-content">
-                    <h2 class="form-title">Registration</h2>
+                    <h2 class="form-title">Log on</h2>
                     <input placeholder="Login" type="text" name="username" class="form-control" required/>
                     <span class="text-danger"></span>
                     <input placeholder="Password" type="password" name="password" class="form-control" required/>

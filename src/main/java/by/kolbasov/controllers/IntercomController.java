@@ -25,7 +25,7 @@ public class IntercomController {
     @Autowired
     private UserService userService;
     @GetMapping("/intercoms")
-    String Registrator(Model model) {
+    public String registrator(Model model) {
         List<IntercomDto> intercoms = intercomService.findAll();
         model.addAttribute("url", "intercoms");
         model.addAttribute("goods", intercoms);
@@ -35,7 +35,7 @@ public class IntercomController {
     }
 
     @GetMapping("/intercoms/{id}")
-    public String CameraDetails(@PathVariable(value = "id") long id, Model model) {
+    public String intercomDetails(@PathVariable(value = "id") long id, Model model) {
         IntercomDto intercom = intercomService.findById(id);
         model.addAttribute("intercom", intercom);
         return "intercomDetails";
@@ -45,6 +45,17 @@ public class IntercomController {
     public String buy(@PathVariable(value = "id") long id) {
         cartService.saveIntercom(id, SecurityContextHolder.getContext()
                 .getAuthentication().getName());
+        return "redirect:/intercoms";
+    }
+    @GetMapping("/addIntercom")
+    public String addIntercom(Model model) {
+        model.addAttribute("intercom", new Intercom());
+        return "addIntercom";
+    }
+
+    @PostMapping("/addIntercom")
+    public String saveIntercom(@ModelAttribute("intercom") Intercom intercom) {
+        intercomService.save(intercom);
         return "redirect:/intercoms";
     }
     @PostMapping("/intercoms/{id}/remove")

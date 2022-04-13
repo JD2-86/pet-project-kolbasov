@@ -18,10 +18,14 @@ body {
     background-color: white;
 
     display: flex;
+    justify-content: space-between;
+}
+.description {
+    display: flex;
     flex-direction: column;
     gap: 15px;
 }
-.wrapper span {
+.description span {
     font-weight: 600;
 }
 
@@ -43,5 +47,16 @@ body {
 
 .buyButton:active{
     transform: scale(0.5);
+}
+.delete-btn {
+    width: 18px;
+    height: 17px;
+    background: url("https://designmodo.com/demo/shopping-cart/delete-icn.svg") no-repeat center;
+    border: none;
+}
+.edit-btn img{
+    width: 18px;
+    height: 17px;
+    border: none;
 }
 

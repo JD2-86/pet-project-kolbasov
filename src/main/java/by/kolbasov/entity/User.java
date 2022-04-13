@@ -21,13 +21,15 @@ public class User {
     private String firstname;
     private String lastname;
     private String email;
+    private String number;
 
-    public User(String username, String password, String firstname, String lastname, String email) {
+    public User(String username, String password, String firstname, String lastname, String email,String number) {
         this.login = username;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
+        this.number=number;
     }
 
     public User() {

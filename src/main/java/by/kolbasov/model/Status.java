@@ -1,4 +1,4 @@
-package by.kolbasov;
+package by.kolbasov.model;
 
 public enum Status {
     IN_CART,

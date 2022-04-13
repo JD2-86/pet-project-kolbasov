@@ -1,7 +1,7 @@
 package by.kolbasov.controllers;
 
 
-import by.kolbasov.Status;
+import by.kolbasov.model.Status;
 import by.kolbasov.dto.CartDto;
 import by.kolbasov.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +52,17 @@ public class CartController {
     @GetMapping("/goodsOrders")
     public String goodOrders(Model model) {
         model.addAttribute("cart",cartService.findByStatus(Status.ORDER));
+        model.addAttribute("url","goodsOrders");
         return "goodsOrder";
+    }
+    @GetMapping("/goodsOrders/{id}")
+    public String goodOrdersDetails(@PathVariable(value = "id") long id, Model model) {
+        model.addAttribute("cart",cartService.findById(id));
+        return "goodsOrderDetails";
+    }
+    @PostMapping("/goodsOrders/{id}/remove")
+    public String removeGoodsOrder(@PathVariable(value = "id") long id){
+        cartService.deleteGoodsOrder(id);
+        return "redirect:/goodsOrders";
     }
 }

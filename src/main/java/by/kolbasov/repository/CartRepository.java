@@ -2,7 +2,7 @@ package by.kolbasov.repository;
 
 
 
-import by.kolbasov.Status;
+import by.kolbasov.model.Status;
 import by.kolbasov.entity.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 

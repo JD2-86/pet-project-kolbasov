@@ -1,11 +1,12 @@
 package by.kolbasov.service.impl;
 
+import by.kolbasov.dto.OrderDto;
 import by.kolbasov.entity.Order;
 import by.kolbasov.entity.User;
+import by.kolbasov.mapper.OrderMapper;
 import by.kolbasov.repository.OrderRepository;
 import by.kolbasov.repository.UserRepository;
 import by.kolbasov.service.OrderService;
-import by.kolbasov.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +17,12 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderRepository orderRepository;
     @Autowired
-    private UserService userService;
-    @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private OrderMapper orderMapper;
     @Override
-    public List<Order> findAll() {
-        return orderRepository.findAll();
+    public List<OrderDto> findAll() {
+        return orderMapper.orderListToOrderDtoList(orderRepository.findAll());
     }
 
     @Override
@@ -32,7 +33,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order findById(Long id) {
-        return orderRepository.findById(id).orElseThrow();
+    public OrderDto findById(Long id) {
+        return orderMapper.OrderToOrderDto(orderRepository.findById(id).orElseThrow());
+    }
+
+    @Override
+    public void deleteOrder(Long id) {
+        orderRepository.delete(orderRepository.findById(id).orElseThrow());
     }
 }

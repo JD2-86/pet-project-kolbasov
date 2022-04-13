@@ -38,11 +38,23 @@ public class RegistratorController {
     }
 
     @GetMapping("/registrators/{id}")
-    public String CameraDetails(@PathVariable(value = "id") long id, Model model) {
+    public String cameraDetails(@PathVariable(value = "id") long id, Model model) {
         RegistratorDto registrator = registratorService.findById(id);
         model.addAttribute("registrator", registrator);
         return "registratorDetails";
     }
+    @GetMapping("/addRegistrator")
+    public String AddRegistrator(Model model) {
+        model.addAttribute("registrator", new Registrator());
+        return "addRegistrator";
+    }
+
+    @PostMapping("/addRegistrator")
+    public String SaveRegistrator(@ModelAttribute("registrator") Registrator registrator) {
+        registratorService.save(registrator);
+        return "redirect:/registrators";
+    }
+
 
     @PostMapping(path = "/registrators/{id}")
     public String buy(@PathVariable(value = "id") long id) {

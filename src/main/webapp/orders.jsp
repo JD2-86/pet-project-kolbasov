@@ -14,18 +14,24 @@
 </style>
 <body>
 <%@ include file="/header.jsp"%>
+<%@ include file="adminHeader.jsp"%>
 <c:forEach var="order" items="${order}">
 <div class="main">
     <div class="wrapper">
-        <div class="user-name">
-            <p><span>Имя:</span> ${order.user.firstname}</p>
+        <div class="description">
+            <div class="user-name">
+                <p><span>Имя:</span> ${order.user.firstname}</p>
+            </div>
+            <div class="address">
+                <p><span>Адрес:</span>${order.address}</p>
+            </div>
+            <div class="button">
+                <button class="buyButton bold"><a href="${url}/${order.id}">Details</a></button>
+            </div>
         </div>
-        <div class="address">
-            <p><span>Адрес:</span>${order.address}</p>
-        </div>
-        <div class="button">
-            <button class="buyButton bold"><a href="${url}/${order.id}">Details</a></button>
-        </div>
+        <form action="/VideoPerimeter_war/${url}/${order.id}/remove"method="post">
+        <button class="delete-btn" type="submit" ></button>
+        </form>
     </div>
 
 </div>

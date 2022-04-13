@@ -4,7 +4,7 @@
 %>
 <html>
 <head>
-    <title>AddGoods</title>
+    <title>AddRegistrator</title>
     <link rel="stylesheet" href="css/addGoodsStyle.css">
 </head>
 <style>
@@ -18,6 +18,7 @@
 <%@ include file="/header.jsp"%>
 <%@ include file="/headerGoods.jsp"%>
 <div class="container mt-5">
+    <h1 class="title">Добавление Регистратора</h1>
     <form class="form" action="/VideoPerimeter_war/addRegistrator" method="post">
         <input type="text" name="name" placeholder="Введите название регистратора" class="form-control"><br>
         <input type="text" name="url" placeholder="Введите url фото" class="form-control"><br>

@@ -2,7 +2,6 @@ package by.kolbasov;
 
 public class CustomException extends RuntimeException{
 
-
     public CustomException() {
     }
 

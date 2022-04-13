@@ -16,7 +16,7 @@
 
     <nav id="navHeader">
         <ul>
-            <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/addGoods">ДОБАВИТЬ КАМЕРУ</a></li>
+            <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/addCamera">ДОБАВИТЬ КАМЕРУ</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/addRegistrator">ДОБАВИТЬ ВИДЕОРЕГИСТРАТОР</a></li>
             <li class="default-header-menu-item"><a class="p-2 text-white" href="/VideoPerimeter_war/addIntercom">ДОБАВИТЬ ДОМОФОН</a></li>
 
